@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import StructuredData from "@/components/StructuredData";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -113,6 +114,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={`${inter.variable} antialiased bg-[var(--bg-primary)]`}>
+        <GoogleAnalytics />
         <LanguageProvider>
           {children}
         </LanguageProvider>
