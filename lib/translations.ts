@@ -140,6 +140,8 @@ export const translations = {
     faq: {
       title: 'Često Postavljana Pitanja',
       subtitle: 'Odgovori na najčešća pitanja o izradi web sajtova',
+      cta: 'Imate dodatna pitanja? Slobodno me kontaktirajte!',
+      ctaButton: 'Postavite Pitanje',
       items: [
         {
           question: 'Koliko košta izrada web sajta?',
@@ -316,6 +318,8 @@ export const translations = {
     faq: {
       title: 'Frequently Asked Questions',
       subtitle: 'Answers to the most common questions about web development',
+      cta: 'Have more questions? Feel free to contact me!',
+      ctaButton: 'Ask a Question',
       items: [
         {
           question: 'How much does a website cost?',

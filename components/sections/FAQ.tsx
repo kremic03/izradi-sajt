@@ -92,9 +92,7 @@ export default function FAQ() {
           className="text-center mt-12"
         >
           <p className="text-[var(--text-secondary)] mb-4">
-            {t.language === 'sr'
-              ? 'Imate dodatna pitanja? Slobodno me kontaktirajte!'
-              : 'Have more questions? Feel free to contact me!'}
+            {t.faq?.cta || 'Imate dodatna pitanja? Slobodno me kontaktirajte!'}
           </p>
           <motion.a
             href="#contact"
@@ -106,7 +104,7 @@ export default function FAQ() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {t.language === 'sr' ? 'Postavite Pitanje' : 'Ask a Question'}
+            {t.faq?.ctaButton || 'Postavite Pitanje'}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
