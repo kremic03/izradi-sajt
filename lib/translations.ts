@@ -136,6 +136,38 @@ export const translations = {
       },
     },
 
+    // FAQ
+    faq: {
+      title: 'Često Postavljana Pitanja',
+      subtitle: 'Odgovori na najčešća pitanja o izradi web sajtova',
+      items: [
+        {
+          question: 'Koliko košta izrada web sajta?',
+          answer: 'Cena izrade web sajta zavisi od složenosti projekta. Jednostavan prezentacioni sajt kreće od 300-500€, kompleksniji sajtovi sa custom funkcionalnostima 800-1500€, dok e-commerce i web aplikacije mogu koštati 1500€+. Svaki projekat je jedinstven i dajem besplatnu procenu nakon konsultacije.',
+        },
+        {
+          question: 'Koliko traje izrada web sajta?',
+          answer: 'Prosečno vreme izrade zavisi od obima projekta. Jednostavan sajt sa 3-5 stranica: 1-2 nedelje. Kompleksniji sajt sa više funkcionalnosti: 3-4 nedelje. E-commerce ili web aplikacija: 4-8 nedelja. Radim brzo ali kvalitetno, bez kompromisa na kvalitetu koda.',
+        },
+        {
+          question: 'Da li nudite održavanje web sajta?',
+          answer: 'Da, nudim mesečne pakete održavanja koji uključuju: redovne backup-e, sigurnosna ažuriranja, izmene sadržaja, tehničku podršku i monitoring performansi. Takođe pružam obuku kako sami možete da ažurirate sadržaj ako želite.',
+        },
+        {
+          question: 'Da li sajt će biti prilagođen za mobilne telefone?',
+          answer: 'Apsolutno! Svi sajtovi koje pravim su 100% responzivni i optimizovani za sve uređaje - desktop, tablet i mobilni telefoni. Testiram na svim popularnim veličinama ekrana i browser-ima. Mobilna optimizacija je prioritet jer većina korisnika dolazi sa telefona.',
+        },
+        {
+          question: 'Da li radite studentske radove iz web programiranja?',
+          answer: 'Da, pomažem studentima sa seminarskim, projektnim i diplomskim radovima iz web programiranja. Pružam kvalitetna i edukativna rešenja sa detaljnim objašnjenjima koda. Teme: React, Node.js, full-stack aplikacije, baze podataka, REST API, itd.',
+        },
+        {
+          question: 'Šta je uključeno u cenu izrade sajta?',
+          answer: 'U cenu je uključeno: dizajn, programiranje, responzivnost, SEO optimizacija, kontakt forma, Google Analytics, hosting setup pomoć, obuka za korišćenje, 30 dana besplatne podrške i sve izmene tokom razvoja. Hosting i domen se plaćaju posebno.',
+        },
+      ],
+    },
+
     // Footer
     footer: {
       rights: 'Sva prava zadržana.',
@@ -278,6 +310,38 @@ export const translations = {
         success: 'Message sent!',
         error: 'Error - try again',
       },
+    },
+
+    // FAQ
+    faq: {
+      title: 'Frequently Asked Questions',
+      subtitle: 'Answers to the most common questions about web development',
+      items: [
+        {
+          question: 'How much does a website cost?',
+          answer: 'The cost of a website depends on project complexity. Simple presentation website starts from €300-500, more complex sites with custom features €800-1500, while e-commerce and web applications can cost €1500+. Each project is unique and I provide free estimates after consultation.',
+        },
+        {
+          question: 'How long does it take to build a website?',
+          answer: 'Average development time depends on project scope. Simple 3-5 page site: 1-2 weeks. Complex site with more features: 3-4 weeks. E-commerce or web application: 4-8 weeks. I work fast but with quality, without compromising code standards.',
+        },
+        {
+          question: 'Do you offer website maintenance?',
+          answer: 'Yes, I offer monthly maintenance packages including: regular backups, security updates, content changes, technical support, and performance monitoring. I also provide training so you can update content yourself if you prefer.',
+        },
+        {
+          question: 'Will the site be mobile-friendly?',
+          answer: 'Absolutely! All websites I build are 100% responsive and optimized for all devices - desktop, tablet, and mobile phones. I test on all popular screen sizes and browsers. Mobile optimization is a priority as most users come from phones.',
+        },
+        {
+          question: 'Do you do student projects in web programming?',
+          answer: 'Yes, I help students with term papers, projects, and thesis work in web programming. I provide quality and educational solutions with detailed code explanations. Topics: React, Node.js, full-stack apps, databases, REST API, etc.',
+        },
+        {
+          question: 'What is included in the website price?',
+          answer: 'Price includes: design, programming, responsiveness, SEO optimization, contact form, Google Analytics, hosting setup help, usage training, 30 days free support, and all changes during development. Hosting and domain are paid separately.',
+        },
+      ],
     },
 
     // Footer

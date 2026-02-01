@@ -167,8 +167,70 @@ export default function StructuredData() {
       {
         "@type": "ListItem",
         "position": 5,
+        "name": "FAQ",
+        "item": "https://izradi-sajt.com/#faq"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
         "name": "Kontakt",
         "item": "https://izradi-sajt.com/#contact"
+      }
+    ]
+  };
+
+  // FAQPage Schema - za FAQ rich results u Google-u
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Koliko košta izrada web sajta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cena izrade web sajta zavisi od složenosti projekta. Jednostavan prezentacioni sajt kreće od 300-500€, kompleksniji sajtovi sa custom funkcionalnostima 800-1500€, dok e-commerce i web aplikacije mogu koštati 1500€+. Svaki projekat je jedinstven i dajem besplatnu procenu nakon konsultacije."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Koliko traje izrada web sajta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prosečno vreme izrade zavisi od obima projekta. Jednostavan sajt sa 3-5 stranica: 1-2 nedelje. Kompleksniji sajt sa više funkcionalnosti: 3-4 nedelje. E-commerce ili web aplikacija: 4-8 nedelja. Radim brzo ali kvalitetno, bez kompromisa na kvalitetu koda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Da li nudite održavanje web sajta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da, nudim mesečne pakete održavanja koji uključuju: redovne backup-e, sigurnosna ažuriranja, izmene sadržaja, tehničku podršku i monitoring performansi. Takođe pružam obuku kako sami možete da ažurirate sadržaj ako želite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Da li sajt će biti prilagođen za mobilne telefone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Apsolutno! Svi sajtovi koje pravim su 100% responzivni i optimizovani za sve uređaje - desktop, tablet i mobilni telefoni. Testiram na svim popularnim veličinama ekrana i browser-ima. Mobilna optimizacija je prioritet jer većina korisnika dolazi sa telefona."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Da li radite studentske radove iz web programiranja?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da, pomažem studentima sa seminarskim, projektnim i diplomskim radovima iz web programiranja. Pružam kvalitetna i edukativna rešenja sa detaljnim objašnjenjima koda. Teme: React, Node.js, full-stack aplikacije, baze podataka, REST API, itd."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Šta je uključeno u cenu izrade sajta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "U cenu je uključeno: dizajn, programiranje, responzivnost, SEO optimizacija, kontakt forma, Google Analytics, hosting setup pomoć, obuka za korišćenje, 30 dana besplatne podrške i sve izmene tokom razvoja. Hosting i domen se plaćaju posebno."
+        }
       }
     ]
   };
@@ -212,6 +274,14 @@ export default function StructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
     </>
