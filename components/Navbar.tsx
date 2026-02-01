@@ -6,9 +6,10 @@ import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const navLinks = [
     { href: '#about', label: t.nav.about },
@@ -19,8 +20,20 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
 
+      // Detekcija smera scroll-a
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling DOWN & past 100px → hide
+        setIsVisible(false);
+      } else {
+        // Scrolling UP or at top → show
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+
+      // Active section detection
       const sections = ['about', 'services', 'portfolio', 'contact'];
       const current = sections.find((section) => {
         const element = document.getElementById(section);
@@ -35,7 +48,7 @@ export default function Navbar() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
@@ -52,11 +65,9 @@ export default function Navbar() {
   return (
     <motion.nav
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass py-5' : 'py-8'
-      }`}
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      className="fixed top-0 left-0 right-0 z-50 glass py-5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">

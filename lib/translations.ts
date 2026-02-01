@@ -18,6 +18,12 @@ export const translations = {
       cta: 'Pogledaj radove',
       contact: 'Kontaktiraj me',
       downloadCV: 'Preuzmi CV',
+      roles: [
+        'Full-Stack Web Developer',
+        'React Specijalista',
+        'UI/UX Entuzijasta',
+        'Problem Solver',
+      ],
     },
 
     // About
@@ -156,6 +162,12 @@ export const translations = {
       cta: 'View Projects',
       contact: 'Contact Me',
       downloadCV: 'Download CV',
+      roles: [
+        'Full-Stack Web Developer',
+        'React Specialist',
+        'UI/UX Enthusiast',
+        'Problem Solver',
+      ],
     },
 
     // About

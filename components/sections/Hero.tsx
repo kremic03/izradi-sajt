@@ -5,15 +5,9 @@ import { motion } from 'framer-motion';
 import FloatingShapes from '../ui/FloatingShapes';
 import { useLanguage } from '@/lib/LanguageContext';
 
-const roles = [
-  'Full-Stack Web Developer',
-  'React Specialist',
-  'UI/UX Enthusiast',
-  'Problem Solver',
-];
-
 export default function Hero() {
   const { t } = useLanguage();
+  const roles = t.hero.roles;
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -57,20 +51,10 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <span className="inline-block px-4 py-2 rounded-full glass text-sm text-[var(--text-secondary)] mb-6">
-            {t.hero.welcome}
-          </span>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4"
         >
           <span className="text-[var(--text-secondary)]">{t.hero.greeting}</span>
@@ -81,7 +65,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="h-12 md:h-16 flex items-center justify-center mb-8"
         >
           <span className="text-xl md:text-3xl text-[var(--text-secondary)]">
@@ -97,7 +81,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="text-[var(--text-secondary)] text-lg md:text-xl max-w-2xl mx-auto mb-10"
         >
           {t.hero.description}
@@ -106,7 +90,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap"
         >
           <motion.button
