@@ -2,13 +2,9 @@
 
 Moderan, responsive portfolio website za freelance web developera sa bilingvalnom podrškom (Srpski/Engleski), profesionalnim animacijama i kontakt formom.
 
-![Next.js](https://img.shields.io/badge/Next.js-16.1.4-black)
-![React](https://img.shields.io/badge/React-19.2.3-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-06B6D4)
-![License](https://img.shields.io/badge/license-MIT-green)
 
-## ✨ Features
+
+## ✨
 
 - 🎨 **Moderan dizajn** - Purple/Violet theme sa glassmorphism efektima
 - 🌐 **Bilingualni** - Srpski i Engleski jezik sa live switching
@@ -43,35 +39,18 @@ Moderan, responsive portfolio website za freelance web developera sa bilingvalno
 
 ## 🚀 Quick Start
 
-### Prerequisites
 
-- Node.js 20+ i npm
-- Resend API account ([resend.com](https://resend.com))
 
-### Installation
 
-1. **Clone repository**
-```bash
-git clone https://github.com/kremic03/portfolio-website.git
-cd portfolio-website
-```
 
 2. **Install dependencies**
 ```bash
 npm install
 ```
 
-3. **Setup environment variables**
 
-Kreiraj `.env.local` fajl u root direktorijumu:
 
-```env
-RESEND_API_KEY=re_your_api_key_here
-```
-
-> **Napomena:** Preuzmi API key sa [resend.com/api-keys](https://resend.com/api-keys)
-
-4. **Run development server**
+3. **Run development server**
 ```bash
 npm run dev
 ```
@@ -161,44 +140,6 @@ const socialLinks = [
 ];
 ```
 
-## 📧 Contact Form Setup
-
-Kontakt forma koristi [Resend](https://resend.com) za slanje emailova.
-
-1. Napravi account na [resend.com](https://resend.com)
-2. Dodaj i verifikuj domen
-3. Generiši API key
-4. Dodaj key u `.env.local`
-5. Konfiguriši `from` adresu u [app/api/contact/route.ts](app/api/contact/route.ts):
-
-```typescript
-from: 'Portfolio Kontakt <kontakt@tvoj-domen.com>',
-to: 'tvoj-email@gmail.com',
-```
-
-## 🚀 Deployment
-
-Projekat je spreman za deployment na Ubuntu VPS. Detaljne instrukcije su u [DEPLOYMENT.md](DEPLOYMENT.md).
-
-### Quick Deploy
-
-```bash
-# Na serveru
-sudo bash deploy.sh
-
-# Upload projekat
-cd /var/www/portfolio
-git clone https://github.com/tvoj-username/portfolio-website.git .
-
-# Setup
-npm install
-npm run build
-pm2 start npm --name "portfolio" -- start
-pm2 save
-
-# Nginx + SSL
-sudo certbot --nginx -d tvoj-domen.com
-```
 
 ## 📊 Scripts
 
@@ -243,14 +184,5 @@ MIT License - Vidi [LICENSE](LICENSE) fajl za detalje.
 - GitHub: [@kremic03](https://github.com/kremic03)
 - LinkedIn: [Nikola Kremić](https://www.linkedin.com/in/nikola-kremic-b4a318257/)
 
-## 🙏 Acknowledgments
 
-- [Next.js](https://nextjs.org/) - React framework
-- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [Resend](https://resend.com/) - Email API
-- [Unsplash](https://unsplash.com/) - Placeholder images
 
----
-
-⭐ Star this repo if you find it useful!
