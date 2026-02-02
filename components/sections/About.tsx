@@ -177,14 +177,15 @@ export default function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-2 sm:grid-cols-3 gap-4"
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-3 sm:gap-4"
             >
               {techStack.map((tech) => (
                 <motion.div
                   key={tech.name}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="glass rounded-xl p-4 text-center cursor-default group"
+                  whileTap={{ scale: 0.98 }}
+                  className="glass rounded-xl p-3 sm:p-4 text-center cursor-default group touch-manipulation"
                 >
                   <div
                     className="mb-2 flex justify-center group-hover:scale-110 transition-transform"

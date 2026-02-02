@@ -92,7 +92,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto relative z-10">
         <SectionTitle title={t.contact.title} subtitle={t.contact.subtitle} />
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-4">{t.contact.heading}</h3>

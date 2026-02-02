@@ -145,7 +145,7 @@ export const translations = {
       items: [
         {
           question: 'Koliko košta izrada web sajta?',
-          answer: 'Cena izrade web sajta zavisi od složenosti projekta. Jednostavan prezentacioni sajt kreće od 300-500€, kompleksniji sajtovi sa custom funkcionalnostima 800-1500€, dok e-commerce i web aplikacije mogu koštati 1500€+. Svaki projekat je jedinstven i dajem besplatnu procenu nakon konsultacije.',
+          answer: 'Cena izrade web sajta zavisi od složenosti projekta. Za jednostavne sajtove cena kreće od 150€. Što se tiče složenijih sajtova, to je stvar dogovora nakon našeg razgovora o daljoj saradnji. Svaki projekat je jedinstven i dajem besplatnu procenu nakon konsultacije.',
         },
         {
           question: 'Koliko traje izrada web sajta?',
@@ -323,7 +323,7 @@ export const translations = {
       items: [
         {
           question: 'How much does a website cost?',
-          answer: 'The cost of a website depends on project complexity. Simple presentation website starts from €300-500, more complex sites with custom features €800-1500, while e-commerce and web applications can cost €1500+. Each project is unique and I provide free estimates after consultation.',
+          answer: 'The cost of a website depends on project complexity. For simple websites, the price starts from €150. For more complex sites, it is a matter of discussion after our conversation about further cooperation. Each project is unique and I provide free estimates after consultation.',
         },
         {
           question: 'How long does it take to build a website?',

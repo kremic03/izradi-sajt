@@ -91,11 +91,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center flex-wrap px-2"
         >
           <motion.button
             onClick={() => handleScrollToSection('portfolio')}
-            className="px-8 py-4 rounded-full bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white font-semibold text-lg hover:shadow-[var(--glow-primary)] transition-all duration-300"
+            className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white font-semibold text-base sm:text-lg hover:shadow-[var(--glow-primary)] transition-all duration-300 w-full sm:w-auto"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -103,7 +103,7 @@ export default function Hero() {
           </motion.button>
           <motion.button
             onClick={() => handleScrollToSection('contact')}
-            className="px-8 py-4 rounded-full glass text-[var(--text-primary)] font-semibold text-lg glow-border hover:bg-[var(--bg-card)] transition-all duration-300"
+            className="px-6 sm:px-8 py-3 sm:py-4 rounded-full glass text-[var(--text-primary)] font-semibold text-base sm:text-lg glow-border hover:bg-[var(--bg-card)] transition-all duration-300 w-full sm:w-auto"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -112,7 +112,7 @@ export default function Hero() {
           <motion.a
             href="/CV.pdf"
             download="Nikola_Kremic_CV.pdf"
-            className="px-8 py-4 rounded-full glass text-[var(--text-primary)] font-semibold text-lg glow-border hover:bg-[var(--bg-card)] transition-all duration-300 inline-flex items-center gap-2"
+            className="px-6 sm:px-8 py-3 sm:py-4 rounded-full glass text-[var(--text-primary)] font-semibold text-base sm:text-lg glow-border hover:bg-[var(--bg-card)] transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >

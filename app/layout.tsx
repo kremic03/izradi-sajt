@@ -18,6 +18,22 @@ export const metadata: Metadata = {
     template: "%s | Izrada Web Sajtova Beograd",
   },
   description: "Profesionalna izrada web sajtova i aplikacija u Beogradu. Moderan dizajn, SEO optimizacija, responzivni sajtovi po pristupačnim cenama. Takođe nudim pomoć sa studentskim radovima iz web programiranja. Besplatan konsultacioni poziv!",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+    viewportFit: 'cover',
+  },
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#0d0416' },
+  ],
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Izrada Web Sajtova',
+  },
+  applicationName: 'Izrada Web Sajtova Beograd',
   keywords: [
     // Glavne keywords
     "izrada web sajtova",
@@ -112,6 +128,10 @@ export default function RootLayout({
     <html lang="sr" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <StructuredData />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body className={`${inter.variable} antialiased bg-[var(--bg-primary)]`}>
         <GoogleAnalytics />

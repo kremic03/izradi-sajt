@@ -93,7 +93,8 @@ export default function Portfolio() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 whileHover={{ y: -10 }}
-                className="group cursor-pointer"
+                whileTap={{ scale: 0.98 }}
+                className="group cursor-pointer touch-manipulation"
               >
                 <div className="relative overflow-hidden rounded-2xl glass">
                   {/* Project Image */}

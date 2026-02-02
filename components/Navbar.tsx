@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* Logo */}
           <motion.a
             href="#"
-            className="text-3xl font-bold gradient-text"
+            className="text-2xl sm:text-3xl font-bold gradient-text whitespace-nowrap overflow-hidden text-ellipsis max-w-[200px] sm:max-w-none"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={(e) => {
