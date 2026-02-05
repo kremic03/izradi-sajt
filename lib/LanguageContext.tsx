@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import { translations, Language, Translations } from './translations';
 
 interface LanguageContextType {
@@ -18,16 +18,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const savedLang = localStorage.getItem('language') as Language;
     if (savedLang === 'sr' || savedLang === 'en') {
-      setLanguage(savedLang);
+      setLanguage(savedLang); // eslint-disable-line react-hooks/set-state-in-effect -- hydration-safe sync sa localStorage
     }
   }, []);
 
   // Sačuvaj jezik u localStorage pri promeni i ažuriraj HTML lang atribut
-  const handleSetLanguage = (lang: Language) => {
+  const handleSetLanguage = useCallback((lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
     document.documentElement.lang = lang;
-  };
+  }, []);
 
   // Ažuriraj HTML lang atribut pri mount-u i promeni
   useEffect(() => {

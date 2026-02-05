@@ -85,7 +85,7 @@ const techStack = [
 ];
 
 export default function About() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const stats = [
     { number: '20', label: t.about.stats.projects },
@@ -116,7 +116,7 @@ export default function About() {
           subtitle={t.about.subtitle}
         />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div key={language} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

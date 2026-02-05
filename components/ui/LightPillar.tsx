@@ -43,18 +43,18 @@ const LightPillar: React.FC<LightPillarProps> = ({
   const geometryRef = useRef<THREE.PlaneGeometry | null>(null);
   const mouseRef = useRef<THREE.Vector2>(new THREE.Vector2(0, 0));
   const timeRef = useRef<number>(0);
-  const [webGLSupported, setWebGLSupported] = useState<boolean>(true);
+  const [webGLSupported, setWebGLSupported] = useState(true);
 
   useEffect(() => {
-    const canvas = document.createElement('canvas');
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!containerRef.current) return;
+
+    // Proveri WebGL podršku
+    const testCanvas = document.createElement('canvas');
+    const gl = testCanvas.getContext('webgl') || testCanvas.getContext('experimental-webgl');
     if (!gl) {
-      setWebGLSupported(false);
+      setWebGLSupported(false); // eslint-disable-line react-hooks/set-state-in-effect -- WebGL provera zahteva DOM canvas
+      return;
     }
-  }, []);
-
-  useEffect(() => {
-    if (!containerRef.current || !webGLSupported) return;
 
     const container = containerRef.current;
     const width = container.clientWidth;

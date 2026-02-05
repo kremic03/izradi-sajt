@@ -6,7 +6,7 @@ import SectionTitle from '../ui/SectionTitle';
 import { useLanguage } from '@/lib/LanguageContext';
 
 export default function FAQ() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleQuestion = (index: number) => {
@@ -21,7 +21,7 @@ export default function FAQ() {
           subtitle={t.faq.subtitle}
         />
 
-        <div className="space-y-4">
+        <div key={language} className="space-y-4">
           {t.faq.items.map((item: { question: string; answer: string }, index: number) => (
             <motion.div
               key={index}

@@ -34,7 +34,7 @@ export default function Hero() {
     }, typeSpeed);
 
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, roleIndex]);
+  }, [displayText, isDeleting, roleIndex, roles]);
 
   const handleScrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

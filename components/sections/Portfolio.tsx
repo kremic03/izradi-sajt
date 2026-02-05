@@ -27,7 +27,7 @@ const projectMeta = [
 ];
 
 export default function Portfolio() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
 
   // Build projects with translations
@@ -56,6 +56,7 @@ export default function Portfolio() {
 
         {/* Category Filter */}
         <motion.div
+          key={language}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -25,7 +25,7 @@ const serviceIcons = [
 ];
 
 export default function Services() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -60,6 +60,7 @@ export default function Services() {
         />
 
         <motion.div
+          key={language}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
