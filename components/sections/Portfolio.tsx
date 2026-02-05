@@ -156,15 +156,6 @@ export default function Portfolio() {
           </AnimatePresence>
         </motion.div>
 
-        {/* More projects hint */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-[var(--text-muted)] mt-10"
-        >
-          {t.portfolio.note}
-        </motion.p>
       </div>
     </section>
   );

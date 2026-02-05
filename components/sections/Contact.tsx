@@ -83,7 +83,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding relative bg-[var(--bg-secondary)]">
+    <section id="contact" className="section-padding relative">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px" style={{ background: 'linear-gradient(90deg, transparent, var(--accent-primary), transparent)' }} />
         <div className="absolute bottom-1/4 -right-40 w-80 h-80 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%)' }} />

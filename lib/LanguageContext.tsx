@@ -12,16 +12,15 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Inicijalizuj state sa vrednošću iz localStorage
-  const [language, setLanguage] = useState<Language>(() => {
-    if (typeof window !== 'undefined') {
-      const savedLang = localStorage.getItem('language') as Language;
-      if (savedLang === 'sr' || savedLang === 'en') {
-        return savedLang;
-      }
+  const [language, setLanguage] = useState<Language>('sr');
+
+  // Učitaj sačuvani jezik iz localStorage nakon mount-a (izbegava hydration mismatch)
+  useEffect(() => {
+    const savedLang = localStorage.getItem('language') as Language;
+    if (savedLang === 'sr' || savedLang === 'en') {
+      setLanguage(savedLang);
     }
-    return 'sr';
-  });
+  }, []);
 
   // Sačuvaj jezik u localStorage pri promeni i ažuriraj HTML lang atribut
   const handleSetLanguage = (lang: Language) => {
@@ -30,7 +29,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = lang;
   };
 
-  // Ažuriraj HTML lang atribut pri mount-u
+  // Ažuriraj HTML lang atribut pri mount-u i promeni
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);

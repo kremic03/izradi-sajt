@@ -42,7 +42,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="section-padding relative bg-[var(--bg-secondary)]">
+    <section id="services" className="section-padding relative">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div

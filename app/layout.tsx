@@ -1,15 +1,27 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Quantico } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import StructuredData from "@/components/StructuredData";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
-const inter = Inter({
-  variable: "--font-inter",
+const quantico = Quantico({
+  variable: "--font-quantico",
+  weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#0d0416' },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://izradi-sajt.com'),
@@ -18,16 +30,6 @@ export const metadata: Metadata = {
     template: "%s | Izrada Web Sajtova Beograd",
   },
   description: "Profesionalna izrada web sajtova i aplikacija u Beogradu. Moderan dizajn, SEO optimizacija, responzivni sajtovi po pristupačnim cenama. Takođe nudim pomoć sa studentskim radovima iz web programiranja. Besplatan konsultacioni poziv!",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-    viewportFit: 'cover',
-  },
-  themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#0d0416' },
-  ],
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
@@ -133,7 +135,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
-      <body className={`${inter.variable} antialiased bg-[var(--bg-primary)]`}>
+      <body className={`${quantico.variable} antialiased bg-[var(--bg-primary)]`}>
         <GoogleAnalytics />
         <LanguageProvider>
           {children}
