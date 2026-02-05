@@ -56,7 +56,7 @@ const socialLinks = [
 
 export default function Contact() {
   const { t, language } = useLanguage();
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', website: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -72,7 +72,7 @@ export default function Contact() {
     setSubmitStatus('idle');
     try {
       const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) });
-      if (response.ok) { setSubmitStatus('success'); setFormData({ name: '', email: '', message: '' }); }
+      if (response.ok) { setSubmitStatus('success'); setFormData({ name: '', email: '', message: '', website: '' }); }
       else { setSubmitStatus('error'); }
     } catch { setSubmitStatus('error'); }
     finally { setIsSubmitting(false); setTimeout(() => setSubmitStatus('idle'), 5000); }
@@ -123,6 +123,11 @@ export default function Contact() {
 
           <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 md:p-8 space-y-6">
+              {/* Honeypot - skriveno polje za botove */}
+              <div className="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10 overflow-hidden" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input type="text" id="website" name="website" value={formData.website} onChange={handleChange} tabIndex={-1} autoComplete="off" />
+              </div>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">{t.contact.form.name}</label>
                 <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)] text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent-primary)] transition-colors" placeholder={t.contact.form.namePlaceholder} />

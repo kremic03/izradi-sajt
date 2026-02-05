@@ -46,7 +46,7 @@ export default function Navbar() {
       setLastScrollY(currentScrollY);
 
       // Active section detection
-      const sections = ['about', 'services', 'portfolio', 'contact'];
+      const sections = ['about', 'services', 'portfolio', 'testimonials', 'faq', 'contact'];
       const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {

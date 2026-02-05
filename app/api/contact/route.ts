@@ -3,6 +3,38 @@ import { NextResponse } from 'next/server';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// ===== Rate Limiting =====
+// In-memory rate limiter: max 3 poruke po IP adresi u 15 minuta
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minuta
+const RATE_LIMIT_MAX_REQUESTS = 3;
+
+const rateLimitMap = new Map<string, { count: number; firstRequest: number }>();
+
+// Čišćenje starih unosa svakih 30 minuta
+setInterval(() => {
+  const now = Date.now();
+  for (const [key, value] of rateLimitMap) {
+    if (now - value.firstRequest > RATE_LIMIT_WINDOW_MS) {
+      rateLimitMap.delete(key);
+    }
+  }
+}, 30 * 60 * 1000);
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now - entry.firstRequest > RATE_LIMIT_WINDOW_MS) {
+    rateLimitMap.set(ip, { count: 1, firstRequest: now });
+    return false;
+  }
+
+  entry.count++;
+  return entry.count > RATE_LIMIT_MAX_REQUESTS;
+}
+
+// ===== Sanitizacija i validacija =====
+
 // Sanitizacija HTML-a za sprečavanje XSS napada
 function sanitizeHtml(str: string): string {
   return str
@@ -26,7 +58,23 @@ const MAX_MESSAGE_LENGTH = 5000;
 
 export async function POST(request: Request) {
   try {
+    // Rate limiting - čitamo IP iz headera
+    const forwarded = request.headers.get('x-forwarded-for');
+    const ip = forwarded?.split(',')[0]?.trim() || 'unknown';
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: 'Previše zahteva. Pokušajte ponovo za 15 minuta.' },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
+
+    // Honeypot provera - ako je popunjeno, to je bot
+    if (body.website) {
+      return NextResponse.json({ success: true });
+    }
 
     // Provera da li su polja stringovi
     if (typeof body.name !== 'string' || typeof body.email !== 'string' || typeof body.message !== 'string') {

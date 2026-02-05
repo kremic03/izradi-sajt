@@ -167,12 +167,18 @@ export default function StructuredData() {
       {
         "@type": "ListItem",
         "position": 5,
+        "name": "Iskustva Klijenata",
+        "item": "https://izradi-sajt.com/#testimonials"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
         "name": "FAQ",
         "item": "https://izradi-sajt.com/#faq"
       },
       {
         "@type": "ListItem",
-        "position": 6,
+        "position": 7,
         "name": "Kontakt",
         "item": "https://izradi-sajt.com/#contact"
       }
@@ -189,7 +195,7 @@ export default function StructuredData() {
         "name": "Koliko košta izrada web sajta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cena izrade web sajta zavisi od složenosti projekta. Jednostavan prezentacioni sajt kreće od 300-500€, kompleksniji sajtovi sa custom funkcionalnostima 800-1500€, dok e-commerce i web aplikacije mogu koštati 1500€+. Svaki projekat je jedinstven i dajem besplatnu procenu nakon konsultacije."
+          "text": "Cena izrade web sajta zavisi od složenosti projekta. Za jednostavne sajtove cena kreće od 150€. Što se tiče složenijih sajtova, to je stvar dogovora nakon našeg razgovora o daljoj saradnji. Svaki projekat je jedinstven i dajem besplatnu procenu nakon konsultacije."
         }
       },
       {

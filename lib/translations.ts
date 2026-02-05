@@ -136,6 +136,38 @@ export const translations = {
       },
     },
 
+    // Testimonials
+    testimonials: {
+      title: 'Šta Klijenti Kažu',
+      subtitle: 'Iskustva zadovoljnih klijenata',
+      items: [
+        {
+          name: 'Marko Petrović',
+          role: 'Vlasnik restorana',
+          text: 'Nikola je napravio savršen sajt za moj restoran. Profesionalan pristup, brza isporuka i sjajan dizajn. Preporuka!',
+          rating: 5,
+        },
+        {
+          name: 'Ana Jovanović',
+          role: 'Freelance fotograf',
+          text: 'Portfolio sajt koji mi je Nikola napravio je upravo ono što sam tražila. Moderan, elegantan i savršeno prikazuje moje radove.',
+          rating: 5,
+        },
+        {
+          name: 'Stefan Nikolić',
+          role: 'Student FTN-a',
+          text: 'Pomogao mi je sa diplomskim radom iz web programiranja. Sve je bilo objašnjeno detaljno i rad je ocenjen najvišom ocenom.',
+          rating: 5,
+        },
+        {
+          name: 'Jelena Đorđević',
+          role: 'Vlasnica online prodavnice',
+          text: 'E-commerce sajt radi odlično! Od dizajna do integracije plaćanja, sve je na visokom nivou. Prodaja je značajno porasla.',
+          rating: 5,
+        },
+      ],
+    },
+
     // FAQ
     faq: {
       title: 'Često Postavljana Pitanja',
@@ -168,6 +200,12 @@ export const translations = {
           answer: 'U cenu je uključeno: dizajn, programiranje, responzivnost, SEO optimizacija, kontakt forma, Google Analytics, hosting setup pomoć, obuka za korišćenje, 30 dana besplatne podrške i sve izmene tokom razvoja. Hosting i domen se plaćaju posebno.',
         },
       ],
+    },
+
+    // WhatsApp
+    whatsapp: {
+      tooltip: 'Pišite mi na WhatsApp!',
+      message: 'Zdravo! Zanima me izrada web sajta. Možemo li da razgovaramo?',
     },
 
     // Footer
@@ -314,6 +352,38 @@ export const translations = {
       },
     },
 
+    // Testimonials
+    testimonials: {
+      title: 'What Clients Say',
+      subtitle: 'Experiences from satisfied clients',
+      items: [
+        {
+          name: 'Marko Petrović',
+          role: 'Restaurant owner',
+          text: 'Nikola created the perfect website for my restaurant. Professional approach, fast delivery, and great design. Highly recommended!',
+          rating: 5,
+        },
+        {
+          name: 'Ana Jovanović',
+          role: 'Freelance photographer',
+          text: 'The portfolio site Nikola built for me is exactly what I was looking for. Modern, elegant, and perfectly showcases my work.',
+          rating: 5,
+        },
+        {
+          name: 'Stefan Nikolić',
+          role: 'FTN Student',
+          text: 'He helped me with my thesis in web programming. Everything was explained in detail, and the work received the highest grade.',
+          rating: 5,
+        },
+        {
+          name: 'Jelena Đorđević',
+          role: 'Online store owner',
+          text: 'The e-commerce site works great! From design to payment integration, everything is top quality. Sales have increased significantly.',
+          rating: 5,
+        },
+      ],
+    },
+
     // FAQ
     faq: {
       title: 'Frequently Asked Questions',
@@ -346,6 +416,12 @@ export const translations = {
           answer: 'Price includes: design, programming, responsiveness, SEO optimization, contact form, Google Analytics, hosting setup help, usage training, 30 days free support, and all changes during development. Hosting and domain are paid separately.',
         },
       ],
+    },
+
+    // WhatsApp
+    whatsapp: {
+      tooltip: 'Message me on WhatsApp!',
+      message: 'Hi! I\'m interested in getting a website built. Can we talk?',
     },
 
     // Footer

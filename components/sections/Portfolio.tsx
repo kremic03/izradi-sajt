@@ -6,12 +6,10 @@ import Image from 'next/image';
 import SectionTitle from '../ui/SectionTitle';
 import { useLanguage } from '@/lib/LanguageContext';
 
-// Project image URLs - koristi Unsplash za placeholder slike
-// Kada budeš imao svoje slike, zameni ove URL-ove sa: /projects/project-1.jpg, itd.
 const projectImages = [
-  'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80', // E-commerce
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', // Portfolio
-  'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80', // Job Finder (mobile app)
+  '/projects/project-1.png',
+  '/projects/project-2.png',
+  '/projects/project-3.jpg',
   'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80', // Restaurant
   'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80', // CRM Dashboard
   'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80', // Blog
