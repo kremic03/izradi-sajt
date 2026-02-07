@@ -7,9 +7,9 @@ import SectionTitle from '../ui/SectionTitle';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const projectImages = [
-  '/projects/project-1.png',
-  '/projects/project-2.png',
-  '/projects/project-3.jpg',
+  '/projects/project-1.webp',
+  '/projects/project-2.webp',
+  '/projects/project-3.webp',
   'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80', // Restaurant
   'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80', // CRM Dashboard
   'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80', // Blog

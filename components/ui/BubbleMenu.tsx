@@ -3,6 +3,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 
 type MenuItem = {
   label: string;
@@ -233,7 +234,7 @@ export default function BubbleMenu({
             className={['logo-content', 'inline-flex items-center justify-center', 'w-[120px] h-full'].join(' ')}
           >
             {typeof logo === 'string' ? (
-              <img src={logo} alt="Logo" className="bubble-logo max-h-[60%] max-w-full object-contain block" />
+              <Image src={logo} alt="Logo" width={120} height={48} className="bubble-logo max-h-[60%] max-w-full object-contain block" />
             ) : (
               logo
             )}
